@@ -66,7 +66,7 @@ Vagrant.configure("2") do |config|
    config.vm.provision "shell", inline: <<-SHELL
     # apt-get update
     # apt-get install -y apache2
-    #install necessary packages
+    # install necessary packages
     sudo yum install wget -y
     sudo yum install unzip -y
     #download terraform - go to https://www.terraform.io/downloads.html 
