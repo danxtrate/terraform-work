@@ -32,7 +32,7 @@ Vagrant.configure("2") do |config|
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  # config.vm.network "private_network", ip: "192.168.33.10"
+   config.vm.network "private_network", ip: "192.168.33.10"
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -70,13 +70,13 @@ Vagrant.configure("2") do |config|
     sudo yum install wget -y
     sudo yum install unzip -y
     #download terraform - go to https://www.terraform.io/downloads.html 
-    #and copy the 64 bit linux image download link to the line below
+    #and copy the 64 bit linux image download link to the line below please
     wget https://releases.hashicorp.com/terraform/0.11.11/terraform_0.11.11_linux_amd64.zip -P /vagrant/home
     #unzip the terraform package in the home folder
     unzip -d /vagrant/home /vagrant/home/terraform_0.11.11_linux_amd64.zip 
     #set the environment variable
     export PATH="$PATH:/home/vagrant/terraform"
     sudo ls -s /home/vagrant/terraform /usr/bin/terraform
-    source /home/vagrant/.bashrc
+    source /home/vagrant/.bashrc 
    SHELL
 end
