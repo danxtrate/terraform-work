@@ -71,12 +71,12 @@ Vagrant.configure("2") do |config|
     sudo yum install unzip -y
     #download terraform - go to https://www.terraform.io/downloads.html 
     #and copy the 64 bit linux image download link to the line below
-    wget https://releases.hashicorp.com/terraform/0.11.11/terraform_0.11.11_linux_amd64.zip
+    wget https://releases.hashicorp.com/terraform/0.11.11/terraform_0.11.11_linux_amd64.zip -P /vagrant/home
     #unzip the terraform package in the home folder
-    unzip terraform_0.11.11_linux_amd64.zip
+    unzip -d /vagrant/home /vagrant/home/terraform_0.11.11_linux_amd64.zip 
     #set the environment variable
-    export PATH="$PATH:~/terraform"
-    sudo ls -s ~/terraform /usr/bin/terraform
-    source ~/.bashrc
+    export PATH="$PATH:/home/vagrant/terraform"
+    sudo ls -s /home/vagrant/terraform /usr/bin/terraform
+    source /home/vagrant/.bashrc
    SHELL
 end
